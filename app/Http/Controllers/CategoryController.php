@@ -11,6 +11,12 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
        
-        return view('product.category', compact('categories'));
+        return view('category.index', compact('categories'));
+    }
+    public function create()
+    {
+        // $category->create();
+
+        return view('category.add');
     }
 }

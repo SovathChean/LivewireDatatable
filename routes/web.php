@@ -2,7 +2,9 @@
 
 use App\Http\Livewire\CategoryTable;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
+use App\Http\Livewire\Category\EditCategory;
+use App\Http\Livewire\Category\IndexCategory;
+use App\Http\Livewire\Category\CreateCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +23,6 @@ Route::get('/', function () {
 Route::get("/home", function () {
     return view('home');
 });
-
-Route::get("/category", [CategoryController::class, 'index'])->name('category.index');
+Route::get("/category/add", CreateCategory::class)->name('category.add');
+Route::get("/category/list", IndexCategory::class)->name('category.index');
+Route::get("/category/edit", EditCategory::class)->name('category.edit');

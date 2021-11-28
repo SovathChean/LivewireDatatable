@@ -10,14 +10,28 @@ use Rappasoft\LaravelLivewireTables\DataTableComponent;
 
 class CategoryTable extends DataTableComponent
 {
-
+    
     public function columns(): array
     {
         return [
-            Column::make('name')
-                ->sortable()
-                ->searchable(),
+            Column::make('ID')
+            ->sortable()
+            ->searchable(),
+            Column::make('Name')
+            ->sortable()
+            ->searchable(),
+            Column::make('Action')
         ];
+    }
+    // public function store(Request $request)
+    // {
+    //     $input = $request->validate([
+    //         ''
+    //     ])
+    // }
+    public function editView()
+    {
+        return view('category.add');
     }
     public function filters(): array
     {
