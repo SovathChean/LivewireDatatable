@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Category;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Filter;
@@ -10,7 +11,7 @@ use Rappasoft\LaravelLivewireTables\DataTableComponent;
 
 class CategoryTable extends DataTableComponent
 {
-    
+    protected $listeners  = ['delete'];
     public function columns(): array
     {
         return [
@@ -23,12 +24,6 @@ class CategoryTable extends DataTableComponent
             Column::make('Action')
         ];
     }
-    // public function store(Request $request)
-    // {
-    //     $input = $request->validate([
-    //         ''
-    //     ])
-    // }
     public function editView()
     {
         return view('category.add');
@@ -51,4 +46,15 @@ class CategoryTable extends DataTableComponent
     {
         return 'livewire-tables.rows.category_table';
     }
+    public function deleteConfirm($categoryId)
+    {
+        $this->dispatchBrowserEvent("delete-confirm", ['id' => $categoryId]);
+    }
+    public function delete($id)
+    {
+        $data = Category::findOrFail($id);
+        $data->delete();
+    }
+
 }
+

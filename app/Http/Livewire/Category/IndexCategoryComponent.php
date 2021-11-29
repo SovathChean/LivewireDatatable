@@ -5,12 +5,12 @@ namespace App\Http\Livewire\Category;
 use Livewire\Component;
 use App\Models\Category;
 
-class IndexCategory extends Component
+class IndexCategoryComponent extends Component
 {
     public function render()
     {
         $categories = Category::all();
        
-        return view('category.index', compact('categories'));
+        return view('livewire.category.index', compact('categories'))->extends('layouts.app');
     }
 }

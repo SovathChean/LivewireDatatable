@@ -59,20 +59,48 @@
             </nav>
         </div>
         <div id="app">
-           <div class="flex flex-col justify-between">
+            <div class="flex flex-col justify-between">
                 <div class="m-2 p-4 bg-white flex-grow-1 ">
                     @include('layouts._flash')
-                    
+
                     @yield('content')
                 </div>
                 <footer class="m-2 p-4 bg-white object-bottom">
                     <h4 class="text-center">All rights reserved. Copyright © 2021</h4>
                 </footer>
-           </div>
+            </div>
         </div>
 
-        
-    </div>
+        @livewireScripts
 
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <x-livewire-alert::scripts />
+    <script>
+        window.addEventListener('delete-confirm', event => {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('delete',  event.detail.id)
+                }
+            })
+        });
+        window.addEventListener('delete', event => {
+                Swal.fire(
+                event.detail.message ?? 'Delete!',
+                ' ',
+                'success'
+                )
+        })
+    </script>
 </body>
+
 </html>

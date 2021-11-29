@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'a4799e26449d4ac711ef584d973883be5cc56c6b',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -379,6 +379,15 @@
                 0 => 'v8.72.0',
             ),
         ),
+        'jantinnerezo/livewire-alert' => array(
+            'pretty_version' => '2.2.3',
+            'version' => '2.2.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jantinnerezo/livewire-alert',
+            'aliases' => array(),
+            'reference' => '8225e494f6106f80719f23b5874b15c6bf76fa1d',
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -395,12 +404,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'a4799e26449d4ac711ef584d973883be5cc56c6b',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -840,6 +849,15 @@
             'install_path' => __DIR__ . '/../rappasoft/laravel-livewire-tables',
             'aliases' => array(),
             'reference' => 'e73ad11d00df34d562ac55550de9705647d1bbb8',
+            'dev_requirement' => false,
+        ),
+        'realrashid/sweet-alert' => array(
+            'pretty_version' => 'v4.1.0',
+            'version' => '4.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../realrashid/sweet-alert',
+            'aliases' => array(),
+            'reference' => '7615c5799fbc8743a6b5a7bd7f645f55a1d62723',
             'dev_requirement' => false,
         ),
         'rhumsaa/uuid' => array(

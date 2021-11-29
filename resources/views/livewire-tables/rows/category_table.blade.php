@@ -6,12 +6,15 @@
 </x-livewire-tables::table.cell>
 <x-livewire-tables::table.cell>
     <div class="d-flex">
-        <button wire.click="editView()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Edit
-        </button>
-        <button class="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+        <a href="{{ route('category.edit', $row) }}">
+            <button wire.click="edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Edit
+            </button>
+        </a>
+        <button wire:click="deleteConfirm({{ $row->id }})" class="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" >
             Delete
         </button>
     </div>
 
 </x-livewire-tables::table.cell>
+

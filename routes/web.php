@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Livewire\Category\CreateCategoryComponent;
+use App\Http\Livewire\Category\EditCategoryComponent;
+use App\Http\Livewire\Category\IndexCategoryComponent;
 use App\Http\Livewire\CategoryTable;
+use App\Http\Livewire\Post\IndexComponents;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Category\EditCategory;
-use App\Http\Livewire\Category\IndexCategory;
-use App\Http\Livewire\Category\CreateCategory;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,6 @@ Route::get('/', function () {
 Route::get("/home", function () {
     return view('home');
 });
-Route::get("/category/add", CreateCategory::class)->name('category.add');
-Route::get("/category/list", IndexCategory::class)->name('category.index');
-Route::get("/category/edit", EditCategory::class)->name('category.edit');
+Route::get("/category/add", CreateCategoryComponent::class)->name('category.add');
+Route::get("/category/list", IndexCategoryComponent::class)->name('category.index');
+Route::get("/category/{category}/edit", EditCategoryComponent::class)->name('category.edit');

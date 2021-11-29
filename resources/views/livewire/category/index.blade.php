@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 
 <!-- Row -->
 <div class="row">
@@ -13,8 +10,4 @@
     </div>
   </div>
 </div>
-<!--Row-->
 
-
-</div>
-@endsection
