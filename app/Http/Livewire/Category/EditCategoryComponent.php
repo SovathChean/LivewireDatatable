@@ -10,7 +10,6 @@ class EditCategoryComponent extends Component
     public Category $category;
     public function render()
     {
-       
         return view('livewire.category.edit')->extends('layouts.app');
     }
     public function update()

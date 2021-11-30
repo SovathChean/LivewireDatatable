@@ -21,6 +21,8 @@ class CategoryTable extends DataTableComponent
             Column::make('Name')
             ->sortable()
             ->searchable(),
+            Column::make('Created_at'),
+            Column::make('Updated_at'),
             Column::make('Action')
         ];
     }
@@ -28,6 +30,7 @@ class CategoryTable extends DataTableComponent
     {
         return view('category.add');
     }
+
     public function filters(): array
     {
         return [
