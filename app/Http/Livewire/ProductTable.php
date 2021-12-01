@@ -4,8 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
-use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Filter;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
 
 class ProductTable extends DataTableComponent
 {
@@ -13,21 +14,16 @@ class ProductTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make('ID')
+            Column::make('ID'),
+            Column::make('Name', 'name')
                 ->sortable()
                 ->searchable(),
-            Column::make('Name')
-                ->sortable()
-                ->searchable(),
-            Column::make('Category')
-                ->sortable()
-                ->searchable(),
+            Column::make('Category'),
             Column::make('Created_at'),
             Column::make('Updated_at'),
             Column::make('Action')
         ];
     }
-
     public function query(): Builder
     {
         return Product::query();

@@ -15,12 +15,10 @@ class CategoryTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make('ID')
-            ->sortable()
-            ->searchable(),
-            Column::make('Name')
-            ->sortable()
-            ->searchable(),
+            Column::make('ID'),
+            Column::make('Name', 'name')
+                ->sortable()
+                ->searchable(),
             Column::make('Created_at'),
             Column::make('Updated_at'),
             Column::make('Action')
